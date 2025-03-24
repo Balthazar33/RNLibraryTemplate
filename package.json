@@ -1,0 +1,17 @@
+{
+  "name": "app-info",
+  "version": "0.0.4",
+  "description": "Get the app version info",
+  "main": "src/index",
+  "author": " <> ()",
+  "license": "UNLICENSED",
+  "homepage": "#readme",
+  "create-react-native-library": {
+    "type": "turbo-module",
+    "languages": "kotlin-objc",
+    "version": "0.48.5"
+  },
+  "peerDependencies": {
+    "react-native": ">=0.70.0"
+  }
+}
