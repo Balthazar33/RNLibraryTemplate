@@ -1,6 +1,5 @@
 package com.appinfo
 
-import android.app.Activity
 import com.appinfo.AppInfoImpl
 import com.facebook.react.bridge.*
 import com.facebook.react.module.annotations.ReactModule

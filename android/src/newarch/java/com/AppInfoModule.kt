@@ -1,12 +1,8 @@
 package com.appinfo
 
-import android.app.Activity
-import com.facebook.react.bridge.Promise
+import com.facebook.react.bridge.*
 import com.appinfo.AppInfoImpl
-import com.facebook.react.bridge.ReactApplicationContext
-import com.facebook.react.bridge.ReactContextBaseJavaModule
 import com.facebook.react.module.annotations.ReactModule
-import com.facebook.react.bridge.ReactMethod
 import com.facebook.react.turbomodule.core.interfaces.TurboModule
 
 // Helps identify the module
