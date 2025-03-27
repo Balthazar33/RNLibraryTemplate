@@ -4,10 +4,7 @@ import android.app.Activity
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import androidx.core.content.pm.PackageInfoCompat
-import com.facebook.react.bridge.Promise
-import com.facebook.react.bridge.ReactApplicationContext
-import com.facebook.react.bridge.WritableMap
-import com.facebook.react.bridge.Arguments
+import com.facebook.react.bridge.*
 
 class AppInfoImpl {
     companion object {
