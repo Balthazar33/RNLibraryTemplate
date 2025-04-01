@@ -1,6 +1,6 @@
 {
   "name": "app-info",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "Get the app version info",
   "main": "src/index",
   "author": " <> ()",
@@ -13,5 +13,18 @@
   },
   "peerDependencies": {
     "react-native": ">=0.70.0"
+  },
+  "codegenConfig": {
+    "modules": {
+      "AppInfo": {
+        "jsSrcsDir": "./src",
+        "android": {
+          "className": "AppInfoModule"
+        },
+        "ios": {
+          "className": "AppInfoModule"
+        }
+      }
+    }
   }
 }
