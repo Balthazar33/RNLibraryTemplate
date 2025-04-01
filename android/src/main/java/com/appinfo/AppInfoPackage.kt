@@ -9,6 +9,9 @@ import com.facebook.react.module.model.ReactModuleInfoProvider
 import com.appinfo.BuildConfig
 
 class AppInfoPackage : BaseReactPackage(), ReactPackage {
+    private val modules = listOf(
+      AppInfoModule::class.java
+    )
     
     override fun getModule(name: String, reactContext: ReactApplicationContext): NativeModule? {
         return if (name == AppInfoModule.NAME) {
@@ -25,14 +28,17 @@ class AppInfoPackage : BaseReactPackage(), ReactPackage {
     override fun getReactModuleInfoProvider(): ReactModuleInfoProvider {
         return ReactModuleInfoProvider {
             val moduleInfos = mutableMapOf<String, ReactModuleInfo>()
-            moduleInfos[AppInfoModule.NAME] = ReactModuleInfo(
-                AppInfoModule.NAME,
-                AppInfoModule.NAME,
+            modules.forEach { moduleClass ->
+                val moduleName = moduleClass.simpleName
+                moduleInfos[moduleName] = ReactModuleInfo(
+                moduleName,
+                moduleName,
                 false,  // canOverrideExistingModule
                 false,  // needsEagerInit
                 false,  // isCxxModule
                 true // isTurboModule
-            )
+                )
+            }
             moduleInfos
         }
     }
