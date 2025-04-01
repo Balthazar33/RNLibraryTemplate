@@ -1,25 +1,8 @@
-// #import "AppInfo.h"
-
-// @implementation AppInfo
-// RCT_EXPORT_MODULE()
-
-// - (NSNumber *)multiply:(double)a b:(double)b {
-//     NSNumber *result = @(a * b);
-
-//     return result;
-// }
-
-// - (std::shared_ptr<facebook::react::TurboModule>)getTurboModule:
-//     (const facebook::react::ObjCTurboModule::InitParams &)params
-// {
-//     return std::make_shared<facebook::react::NativeAppInfoSpecJSI>(params);
-// }
-
-// @end
-// TODO:
-
 #import "AppInfo.h"
 #import <React/RCTLog.h>
+#ifdef RCT_NEW_ARCH_ENABLED
+#import "<GeneratedSpec>.h"
+#endif
 
 @implementation AppInfo
 
@@ -53,5 +36,13 @@ RCT_EXPORT_METHOD(getAppVersion:(RCTPromiseResolveBlock)resolve
     reject(@"exception", exception.reason, error);
   }
 }
+
+#ifdef RCT_NEW_ARCH_ENABLED
+ - (std::shared_ptr<facebook::react::TurboModule>)getTurboModule:
+    (const facebook::react::ObjCTurboModule::InitParams &)params
+ {
+    return std::make_shared<facebook::react::<NativeAppInfoSpecJSI>>(params);
+ }
+#endif
 
 @end

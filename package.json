@@ -22,7 +22,7 @@
           "className": "AppInfoModule"
         },
         "ios": {
-          "className": "AppInfoModule"
+          "className": "AppInfo"
         }
       }
     }
