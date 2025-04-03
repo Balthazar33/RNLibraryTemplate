@@ -1,4 +1,4 @@
-import AppInfo from './NativeAppInfo';
+import AppInfo from "./NativeAppInfo";
 
 // export function getAppVersion(): Promise<{versionName: string; versionCode: number}> {
 //   return AppInfo.getAppVersion();
@@ -6,4 +6,7 @@ import AppInfo from './NativeAppInfo';
 
 export default {
   getAppVersion: AppInfo.getAppVersion,
-}
+};
+
+export { SampleButton } from "./components/SampleButton";
+export {type AppInfoModuleInterface} from './types'; 

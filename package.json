@@ -11,20 +11,22 @@
     "languages": "kotlin-objc",
     "version": "0.48.5"
   },
+  "scripts": {
+    "codegen": "npx @react-native-community/cli codegen"
+  },
   "peerDependencies": {
     "react-native": ">=0.70.0"
   },
+  "devDependencies": {
+    "@types/react": "*",
+    "react": "*"
+  },
   "codegenConfig": {
-    "modules": {
-      "AppInfo": {
-        "jsSrcsDir": "./src",
-        "android": {
-          "className": "AppInfoModule"
-        },
-        "ios": {
-          "className": "AppInfo"
-        }
-      }
+    "name": "NativeAppInfoSpec",
+    "type": "modules",
+    "jsSrcsDir": "./src",
+    "android": {
+      "javaPackageName": "com.appinfo"
     }
   }
 }
