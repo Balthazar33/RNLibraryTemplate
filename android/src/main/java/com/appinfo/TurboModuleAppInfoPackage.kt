@@ -7,6 +7,10 @@ import com.facebook.react.module.model.ReactModuleInfo
 import com.facebook.react.module.model.ReactModuleInfoProvider
 
 class TurboModuleAppInfoPackage : BaseReactPackage() {
+    private val modules = listOf(
+      AppInfoModule::class.java
+    )
+
     override fun getModule(name: String, reactContext: ReactApplicationContext): NativeModule? {
         return if (name == AppInfoModule.NAME) {
             AppInfoModule(reactContext)
@@ -18,14 +22,17 @@ class TurboModuleAppInfoPackage : BaseReactPackage() {
     override fun getReactModuleInfoProvider(): ReactModuleInfoProvider {
         return ReactModuleInfoProvider {
             val moduleInfos = mutableMapOf<String, ReactModuleInfo>()
-            moduleInfos[AppInfoModule.NAME] = ReactModuleInfo(
-                AppInfoModule.NAME,
-                AppInfoModule.NAME,
+            modules.forEach { moduleClass ->
+                val moduleName = moduleClass.simpleName
+                moduleInfos[moduleName] = ReactModuleInfo(
+                moduleName,
+                moduleName,
                 false,  // canOverrideExistingModule
                 false,  // needsEagerInit
                 false,  // isCxxModule
                 true // isTurboModule
-            )
+                )
+            }
             moduleInfos
         }
     }
